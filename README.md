@@ -120,6 +120,9 @@ First step open an HTML file and add the file link
 <script src="https://raw.githubusercontent.com/Dominik-DiBenedetto/NUKE-JS/PureJS/nuke.js"></script>
 ```
 
+### Section 1: Rendering.
+#### This section is focused on rendering HTML in easy & powerful ways using NUKE JS
+
 only other thing we do in our HTML file is put our div placeholders
 ```HTML
 <div class="root1"></div>
