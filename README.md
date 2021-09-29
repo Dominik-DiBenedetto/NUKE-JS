@@ -357,3 +357,121 @@ const App = () => {
     `;
 };
 ```
+
+Now the last thing to do for our clicker game has nothing NUKE-ey About it but this will make our workers "work" so I will include it:
+
+```Javascript
+setInterval(() => {
+  if (workers > 0) {
+      let total = 0
+      for (s in stores){
+          const store = stores[s]
+          total += store.CPS
+      }
+      if (total !== 0) cash += total
+      refresh()
+  }
+}, 1000)
+```
+
+Okay So That Is How You Render In NUKE. Very easy right! Also very powerful.
+
+Final code (JS) from example:
+
+```Javascript
+const root1 = document.querySelector(".root1");
+let cash = 0;
+
+const stores = {
+    S1: {
+        Name: "Lemonade Stand",
+        W: 0,
+        WP: 10,
+        CPW: 1,
+        LWP: 0,
+        CPS: 0,
+    },
+    S2: {
+        Name: "Store 2",
+        W: 0,
+        WP: 100,
+        CPW: 10,
+        LWP: 0,
+        CPS: 0,
+    },
+    S3: {
+        Name: "Store 3",
+        W: 0,
+        WP: 250,
+        CPW: 25,
+        LWP: 0,
+        CPS: 0,
+    },
+};
+
+let workers = 0;
+
+function refresh() {
+    NUKE.refresh(App(), root1);
+}
+
+function buyWorker(sName) {
+    const store = stores[sName];
+    if (cash >= store.WP) {
+        cash -= store.WP;
+        store.W += 1;
+        store.LWP = store.WP;
+        store.WP = Math.round(store.LWP * 1.25);
+        store.CPS += store.CPW;
+        workers += 1;
+        refresh();
+    }
+}
+
+function addCash() {
+    cash += 1;
+    refresh();
+}
+
+const App = () => {
+    return `
+      <h3>Cash: ${cash}</h3>
+      <div class="stores">
+      ${NUKE.for(1, "<=", 3, (i) => {
+          return `
+            <div class=store store-${i}">
+              <div class="store-name">
+                <h3>${stores[`S${i}`].Name}</h3>
+              </div>
+              <div class="store-contents">
+                <div class="store-data">
+                  <h3>Workers: ${stores[`S${i}`].W}</h3>
+                  <button onclick="buyWorker('S${i}')">Buy Worker: $${stores[`S${i}`].WP}</button>
+                  ${new NUKE.check(i == 1, () => {
+                    return `<button onclick="addCash()">$1</button>`
+                  }).if()}
+                  <span class="cps"><span class="CPSCashNum">${stores[`S${i}`].CPS}</span>/s</span>
+                </div>
+               </div>
+              </div>
+                `;
+      })}
+      </div>
+    `;
+};
+
+setInterval(() => {
+  if (workers > 0) {
+      let total = 0
+      for (s in stores){
+          const store = stores[s]
+          total += store.CPS
+      }
+      if (total !== 0) cash += total
+      refresh()
+  }
+}, 1000)
+
+NUKE.render(App(), root1);
+
+```
