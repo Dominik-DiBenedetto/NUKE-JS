@@ -5,6 +5,9 @@ The newest JavaScript Framework.
 ## About
 The first thing you should know is there are two ways to use NUKE JS, we'll get into that in a little for now let me introduce you to the benefits of using NUKE > Vanilla JS or Other Frameworks. You should know all frameworks have their pros and cons, really it all comes down to personal prefrence. So many times I feel like using a framework such as react for my project is just overkill and a hassel for the scale project im making. With nuke I feel as it is much more reasonable for a small-scale project and possibly a large scale project (overtime NUKE will get more features making it more and more effective for larger-scale projects too). Because of the fact that all you need is an import cdn to use NUKE I feel it is much easier, especially for newer programmers. NUKE can also easily be used along-side other Frameworks because of this reason.
 
+####All ready know this stuff, already know which style you're choosing? Jump straight to the tutorials:
+
+
 ### NUKE Syntax 
 While developing NUKE I tried to keep the syntax as clean, and descriptive as possible, while also not taking away any possible variable/function names due to the fact **nuke functions** start with with .NUKE . Thats all for the syntax section, **more syntax will be covered in the individual HTML-Binding and Pure JS sections.**
 
