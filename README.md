@@ -256,7 +256,7 @@ So Step 1 to making this non copy-paste code is to wrap this code in a `NUKE.for
 ```
 
 | Method     | Parameters             |
-| :---------:| :--------------------: |
+| :---------:| :--------------------- |
 | NUKE.for() | 1 - Loop Starting #    |
 | NUKE.for() | 2 - Loop Condition     |
 | NUKE.for() | 3 - Loop End #         |
