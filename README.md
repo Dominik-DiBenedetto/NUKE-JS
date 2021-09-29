@@ -117,7 +117,7 @@ Alrighty I see you chose NUKE JS-Pure JS.. Great Choice!
 
 First step open an HTML file and add the file link
 ```html
-<script src="https://raw.githubusercontent.com/Dominik-DiBenedetto/NUKE-JS/PureJS/nuke.js"></script>
+<script src="https://combinatronics.com/Dominik-DiBenedetto/NUKE-JS/PureJS/nuke.js"></script>
 ```
 
 ### Section 1: Rendering.
