@@ -265,4 +265,35 @@ So Step 1 to making this non copy-paste code is to wrap this code in a `NUKE.for
 Now you have three stores rendered out each with a store-storeNumber class (for styling)
 Now we will fill in the information/text:
 
+```Javascript
+const App = () => {
+    return `
+      <h3>Cash: ${cash}</h3>
+      <div class="stores">
+      ${NUKE.for(1, "<=", 3, (i) => {
+          return `
+            <div class=store store-${i}">
+              <div class="store-name">
+                <h3>${stores[`S${i}`].Name}</h3>
+              </div>
+              <div class="store-contents">
+                <div class="store-data">
+                  <h3>Workers: ${stores[`S${i}`].W}</h3>
+                  <button onclick="buyWorker('S${i}')">Buy Worker: $${stores[`S${i}`].WP}</button>
+                  <span class="cps"><span class="CPSCashNum">${stores[`S${i}`].CPS}</span>/s</span>
+                </div>
+               </div>
+              </div>
+                `;
+      })}
+      </div>
+    `;
+};
+```
 
+Cool! Now we have the information filled up. I will now introduce you to the `NUKE.check()` method.
+
+| Method     | Parameters                |
+| :---------:| :------------------------ |
+| NUKE.check() | 1 - Check Condition #   |
+| NUKE.check() | 2 - What the check runs |
