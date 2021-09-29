@@ -12,7 +12,7 @@ While developing NUKE I tried to keep the syntax as clean, and descriptive as po
 Thats right we have HTML-Binding w/ JS or Pure JS
 
 ### Whats the difference
-####The HTML-Binding allows you to use custom attributes like
+#### The HTML-Binding allows you to use custom attributes like
 ```javascript
 nuke-controller
 ```
