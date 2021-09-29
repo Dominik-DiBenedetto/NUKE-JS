@@ -7,6 +7,7 @@ The first thing you should know is there are two ways to use NUKE JS, we'll get 
 
 #### All ready know this stuff, already know which style you're choosing? Jump straight to the tutorials:
 [HTML Based Version](#html-based-nuke-js)
+[Pure Javascript Version](#pure-js-nuke-js)
 
 
 ### NUKE Syntax 
