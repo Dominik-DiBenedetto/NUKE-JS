@@ -172,7 +172,7 @@ const stores = {
 let workers = 0
 
 function refresh(){
-    NUKE.refresh(App(), renderTo)
+    NUKE.refresh(App(), root1)
 }
 ```
 
@@ -291,9 +291,69 @@ const App = () => {
 };
 ```
 
-Cool! Now we have the information filled up. I will now introduce you to the `NUKE.check()` method.
+Cool! Now we have the information filled up. I will now introduce you to the `new NUKE.check()` method.
 
-| Method     | Parameters                |
-| :---------:| :------------------------ |
-| NUKE.check() | 1 - Check Condition #   |
-| NUKE.check() | 2 - What the check runs |
+| Method           | Parameters              |
+| :---------------:| :---------------------- |
+| new NUKE.check() | 1 - Check Condition #   |
+| new NUKE.check() | 2 - What the check runs |
+
+new NUKE.check() will create us a new check which will allow us to check the validity of something (basically an if statment)
+
+### new NUKE.check() methods
+
+first of all a NUKE.check statment would look like this in your render code:
+```Javascript
+    new NUKE.check(i == 1, () => {
+      return `HTML`
+    })
+```
+
+From there you will decide whether you will want to have a check with an else statment or without to do this simply add the .if() or .else() function after that code. The .else() function takes a function to do something when the check is false but will also execute the original if code if the condition is true, so do not use .if().else() at the same time. If you only want the if stament and not the else just simply put .if()
+
+Ex 1. Only if statement:
+```Javascript
+  new NUKE.check(i == 1, () => {
+      return `HTML`
+  }).if()
+```
+
+Ex 2. If + Else:
+```Javascript
+  new NUKE.check(i == 1, () => {
+    return `HTML`
+  }).else( () => {
+    return 'Check was false!'
+  })
+```
+
+#### Okay now time to implement this check. Basically if its rendering the first store (if i == 1) then we want to add an add cash button:
+
+```Javascript
+const App = () => {
+    return `
+      <h3>Cash: ${cash}</h3>
+      <div class="stores">
+      ${NUKE.for(1, "<=", 3, (i) => {
+          return `
+            <div class=store store-${i}">
+              <div class="store-name">
+                <h3>${stores[`S${i}`].Name}</h3>
+              </div>
+              <div class="store-contents">
+                <div class="store-data">
+                  <h3>Workers: ${stores[`S${i}`].W}</h3>
+                  <button onclick="buyWorker('S${i}')">Buy Worker: $${stores[`S${i}`].WP}</button>
+                  ${new NUKE.check(i == 1, () => {
+                    return `<button onclick="addCash()">$1</button>`
+                  }).if()}
+                  <span class="cps"><span class="CPSCashNum">${stores[`S${i}`].CPS}</span>/s</span>
+                </div>
+               </div>
+              </div>
+                `;
+      })}
+      </div>
+    `;
+};
+```
