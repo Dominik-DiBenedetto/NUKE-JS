@@ -262,4 +262,7 @@ So Step 1 to making this non copy-paste code is to wrap this code in a `NUKE.for
 | NUKE.for() | 3 - Loop End #         |
 | NUKE.for() | 4 - What the loop runs |
 
-Now you have three stores rendered out
+Now you have three stores rendered out each with a store-storeNumber class (for styling)
+Now we will fill in the information/text:
+
+
