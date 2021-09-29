@@ -223,3 +223,34 @@ const App = () => {
                 `
 }
 ```
+So now if we refresh our page with all of our code we should have.. actually still a blank page (For The most Part)! But, if you right click > inspect then you will see all the code is actually rendered in root1, it just appears blank because we didn't but text in anything!
+Okay. If you checked the source code for the HTML-Binding way you would have saw you needed to pretty much copy-paste a lot of HTML with just a few changes in store names and stuff. To avoid having to copy-paste we can use the `NUKE.for()` method, this allows you to make a for loop of numbers inside of the return render.
+So Step 1 to making this non copy-paste code is to wrap this code in a `NUKE.for()` like this:
+
+```Javascript
+  const App = () => {
+    return `
+    <h3>Cash: </h3>
+    <div class="stores">
+      ${
+        NUKE.for(1, "<=", 3, (i) => {
+          return `
+            <div class=store store-${i}">
+              <div class="store-name">
+                <h3></h3>
+              </div>
+              <div class="store-contents">
+                <div class="store-data">
+                  <h3></h3>
+                  <button onclick=""></button>
+                  <span class="cps"><span class="CPSCashNum"></span>/s</span>
+                </div>
+               </div>
+              </div>
+                `
+        })
+      }
+      </div>
+    `
+  }
+```
