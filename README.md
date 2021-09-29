@@ -482,14 +482,28 @@ So this feature is the use effect which basically will run a function everytime 
 
 Here is how you make an observed variable:
 ```Javascript
-NUKE.Observer.Cash = 0
+NUKE.Observe.Cash = 0
 ```
 
 Now to use the use effect when the observed cash variable is changed call the use effect function like this
 ```Javascript
 NUKE.useEffect((props) => {
 
-}, {Cash: NUKE.Observer.Cash})
+}, {Cash: NUKE.Observe.Cash})
 ```
 
 The first argument of the function will ALWAYS be the props. The props will allow you to access the depedencies, also you can check which dependency was changed which is stored in props.Changed (NOTE: This returns the changed dependency key not object)
+
+So we can use a use effect like this:
+
+```Javascript
+NUKE.useEffect((props) => {
+  console.log(`${props.Changed}'s Value Changed to ${props[props.Changed]}`)
+}, {Cash: NUKE.Observe.Cash, RandomText: NUKE.Observe.RandomText})
+```
+
+And thats all there really is to NUKE.useEffect!
+
+## Outro
+
+Hope you guys like NUKE JS and I hope it helps you. Please leave feedback and feature ideas. **New features will be added regularly!**
