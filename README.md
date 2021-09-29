@@ -475,3 +475,19 @@ setInterval(() => {
 NUKE.render(App(), root1);
 
 ```
+
+### Secton 2: Extra Features
+
+So this feature is the use effect which basically will run a function everytime a variable changes. It cannot be any variable though it has to be an observed variable.
+
+Here is how you make an observed variable:
+```Javascript
+NUKE.Observer.Cash = 0
+```
+
+Now to use the use effect when the observed cash variable is changed call the use effect function like this
+```Javascript
+NUKE.useEffect(() => {
+
+}, {Cash: NUKE.Observer.Cash})
+```
