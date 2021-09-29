@@ -487,7 +487,9 @@ NUKE.Observer.Cash = 0
 
 Now to use the use effect when the observed cash variable is changed call the use effect function like this
 ```Javascript
-NUKE.useEffect(() => {
+NUKE.useEffect((props) => {
 
 }, {Cash: NUKE.Observer.Cash})
 ```
+
+The first argument of the function will ALWAYS be the props. The props will allow you to access the depedencies, also you can check which dependency was changed which is stored in props.Changed (NOTE: This returns the changed dependency key not object)
