@@ -69,6 +69,7 @@
     set: function (target, key, value) {
         if (useEffectDependecies[key]){
             useEffectDependecies[key] = value
+            effect.setDependcy("Changed", key)
             effect.run()
         }
         target[key] = value;
@@ -81,6 +82,10 @@
             useEffectDependecies = dependencies
             this.dependencies = dependencies
             this.func = func
+        }
+
+        setDependcy(key, val){
+            this.dependencies[key] = val
         }
 
         run(){
