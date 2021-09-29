@@ -38,7 +38,7 @@ function App(){
 }
 NUKE.render(App(), root)
 ```
-We'll dive deeper into the syntax in a bit.
+##### We'll dive deeper into the syntax in a bit.
 -----------------------------------------------------------
 So now, which one is right for you? Well it really comes down to personal prefrence. I would always recommend the Pure JS (especially for more advanced programmers) as it has more features, the HTML Based one is still great but when your making a bigger scale app you would need the extra functionality. The HTML one is more pointed towards beginners, but anyone that knows the basics of Javascript can easily pull of the Pure JS due to its straight-foward syntax.
 
