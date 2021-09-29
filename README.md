@@ -25,7 +25,7 @@ nuke-bind-val
 ```javascript
 nuke-bind-msg
 ```
-####Using The Pure JS Version Everything Will Be Rendered In Javascript, using a function that returns the HTML Code To Display.
+#### Using The Pure JS Version Everything Will Be Rendered In Javascript, using a function that returns the HTML Code To Display.
 **Example:**
 ```javascript
 const root = document.querySelector('.root1')
@@ -51,7 +51,7 @@ don't forget to include the HTML Based NUKE JS file:
 ```html
 <script src="https://combinatronics.com/Dominik-DiBenedetto/NUKE-JS/main/nuke.js"></script>
 ```
-###Creating a controller
+### Creating a controller
 So to actually be able to use these custom attributes mentioned earlier you need a controller-div to wrap around your elements (with the custom attributes). 
 **[NOTE] You can create as many controllers as you want.**
 
