@@ -79,11 +79,12 @@
     class useEffectClass{
         constructor (func, dependencies){
             useEffectDependecies = dependencies
+            this.dependencies = dependencies
             this.func = func
         }
 
         run(){
-            return this.func()
+            return this.func(this.dependencies)
         }
     }
 
